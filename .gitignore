@@ -1,10 +1,13 @@
 node_modules
 ignored
 listen_api_test
-BE/config
-BE/testsql.js
+config
+testsql.js
 db.json
 .DS_Store
 migrations.bk
 ecosystem.config.js
 enviroment_variables
+.env
+.env*
+dist/
