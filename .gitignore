@@ -1,7 +1,7 @@
 node_modules
 ignored
 listen_api_test
-config
+config.json
 testsql.js
 db.json
 .DS_Store
