@@ -19,7 +19,7 @@ export const register = async (req, res, next) => {
             password: hash,
         });
     } catch (err) {
-        res.locals.error = err.errors[0].message; //FIXME catch err
+        res.locals.error = err; //FIXME catch err
         return res.status(500).send(JSON.stringify(res.locals));
     }
     const token = jwt.sign(
@@ -56,7 +56,7 @@ export const login = async (req, res, next) => {
             }
         );
     } catch (err) {
-        res.locals.error = err.errors[0].message; //FIXME catch err
+        res.locals.error = err; //FIXME catch err
         return res.status(500).send(JSON.stringify(res.locals));
     }
     if (!user) return handleInvalidInputs();
@@ -161,7 +161,7 @@ export const changeUserProfile = async (req, res, next) => {
             }
         );
     } catch (err) {
-        res.locals.error = err.errors[0].message;
+        res.locals.error = err;
         return res.status(500).send(JSON.stringify(res.locals));
     }
     if (!user) return handleInvalidInputs();

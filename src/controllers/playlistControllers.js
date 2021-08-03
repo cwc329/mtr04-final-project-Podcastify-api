@@ -79,7 +79,7 @@ export const addPlaylist = async (req, res, next) => {
             userId: id,
         });
     } catch (err) {
-        res.locals.error = err.errors[0].message;
+        res.locals.error = err;
         return res.status(500).json(res.locals);
     }
     next();
